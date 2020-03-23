@@ -1,0 +1,19 @@
+{
+    "name": "zhen/frameworkphp3wa",
+    "description": "learn to create a framework php",
+    "authors": [
+        {
+            "name": "zhen yang",
+            "email": "zhen.yang@hotmail.fr"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "":"src/"
+        }
+    }
+}
