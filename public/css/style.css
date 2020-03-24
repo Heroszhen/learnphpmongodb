@@ -1,0 +1,47 @@
+nav{
+    background-color: #563d7c;
+    color: #cbbde2;
+}
+
+nav a{
+    color: #cbbde2;
+}
+nav a:hover{
+    color: white;
+}
+
+nav a.navbar-brand, nav a.navbar-brand:hover{
+    color:white;
+}
+
+nav li.active a{
+    color:white;
+}
+
+.undernav{
+    margin-top:56px;
+}
+
+img{
+    width:100%;
+    height:auto;
+}
+
+#bigimg{
+    position: absolute;
+    z-index: 3000;
+    position: fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,0.6);
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+    display:none;
+}
+
+#bigimg img{
+    height:100%;
+    width:auto;
+}
