@@ -17,7 +17,7 @@
     "autoload": {
         "psr-4": {
             "App\\":"src/",
-            "frameworkphp3wa\\":"frameworkphp3wa/"
+            "Frameworkphp3wa\\":"app/frameworkphp3wa/"
         }
     }
 }

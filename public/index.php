@@ -2,6 +2,13 @@
 
 require_once "../vendor/autoload.php";
 
+use Frameworkphp3wa\Kernel;
+
+$kernel = new Kernel();
+$kernel->run();
+/*
+require_once "../vendor/autoload.php";
+
 use App\Controller\Home;
 use App\Controller\Security;
 
@@ -41,4 +48,4 @@ if($routeInfo[0] == FastRoute\Dispatcher::FOUND) {
     $security = new Security();
     $response = $security->index();
     echo $twig->render($response[0], ["parameters"=>$response[1]]); 
-}
+}*/
