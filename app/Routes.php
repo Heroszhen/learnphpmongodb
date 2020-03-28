@@ -1,7 +1,7 @@
 <?php
 
 use App\Controller\HomeController;
-use App\Controller\Security;
+use App\Controller\SecurityController;
 use FastRoute\RouteCollector;
 
 

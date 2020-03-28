@@ -1,4 +1,5 @@
 # frameworkphp3wa
+* C'est un framework php que j'ai créé avec le formateur Cyril pendant la formation de 3WA.
 
 ## les règles
 * Utiliser une architecture MVC (Model / Vue / Controller)
