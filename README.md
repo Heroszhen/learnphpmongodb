@@ -12,6 +12,7 @@
 
 <h2>Outils installés</h2>
 <ul>
+    <li>twig</li>
     <li>PDO</li>
     <li>FlashBag</li>
     <li>Routage</li>
