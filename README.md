@@ -10,4 +10,12 @@
 * Préparer une interface de Cache, nous créerons une classe de cache, (nous utiliserons Redis dans notre futur projet).
 * Vous devrez documenter votre code.
 
-<h2>Structure</h2>
+<h2>Outils installés</h2>
+<ul>
+    <li>PDO</li>
+    <li>FlashBag</li>
+    <li>Routage</li>
+    <li>Bootstrap</li>
+    <li>JQuery</li>
+    <li>PHPUnit</li>
+</ul>

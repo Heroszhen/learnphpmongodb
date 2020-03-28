@@ -4,6 +4,11 @@
 <div id="home" class="container pt-3">
     <div class="row">
         <h1 class="col-12 text-center">Bienvenue</h1>
+        <div class="col-12">
+            <div class="alert alert-{{ flash.type }}">
+                {{ flash.message }}
+            </div>
+        </div>
         <div class="col-12 mb-5">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

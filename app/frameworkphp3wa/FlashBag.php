@@ -43,5 +43,11 @@ class FlashBag
         return $return;
     }
  
+    /**
+     * empty flashbag
+     */
+    public function empty(){
+        $_SESSION['flashbag'] = null;
+    }
 }
 

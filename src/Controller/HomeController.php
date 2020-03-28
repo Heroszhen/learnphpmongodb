@@ -3,19 +3,16 @@
 namespace App\Controller;
 
 use Frameworkphp3wa\AbstractController;
+use Frameworkphp3wa\FlashBag;
 
 class HomeController extends AbstractController{
+
     public function index(){
-        $this->render("home.index.twig",["nav"=>"home"]);
-    }
-
-    public function myForm($post=[]){
-        if(count($post) == 0)$name = "";
-        else $name = $post["name"];
-        return ["home.myform.twig",["nav"=>"myform","name"=>$name]];
-    }
-
-    public function Introduction(){
-        $this->render("home.introduction.twig",["nav"=>"introduction"]);
+        $flash = new FlashBag();
+        $flash->empty();
+        $flash->set("exemple flashbag message","info");
+        return $this->render("home.index.twig",[
+            "flash" => $flash->get()
+        ]);
     }
 }
