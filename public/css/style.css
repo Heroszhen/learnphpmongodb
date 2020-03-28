@@ -1,36 +1,13 @@
-nav{
-    background-color: #563d7c;
-    color: #cbbde2;
-}
-
-nav a{
-    color: #cbbde2;
-}
-nav a:hover{
-    color: white;
-}
-
-nav a.navbar-brand, nav a.navbar-brand:hover{
-    color:white;
-}
-
-nav li.active a{
-    color:white;
-}
-
-nav .dropdown a.active{
-    color:white;
-}
-
-.undernav{
-    margin-top:56px;
-}
-
 img{
     width:100%;
     height:auto;
 }
 
+a , a:hover{
+    text-decoration: none;
+}
+
+/*
 #bigimg{
     position: absolute;
     z-index: 3000;
@@ -48,4 +25,4 @@ img{
 #bigimg img{
     height:100%;
     width:auto;
-}
+}*/

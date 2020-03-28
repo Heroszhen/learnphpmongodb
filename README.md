@@ -8,3 +8,5 @@
 * Utiliser un moteur de templates (Twig)
 * Préparer une interface de Cache, nous créerons une classe de cache, (nous utiliserons Redis dans notre futur projet).
 * Vous devrez documenter votre code.
+
+<h2>Structure</h2>

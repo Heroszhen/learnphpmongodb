@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace Frameworkphp3wa;
 
+use App\Entity\Article;
 use Twig\Environment as Twig;
 
 abstract class AbstractController{
@@ -12,6 +13,10 @@ abstract class AbstractController{
     }
 
     public function render($file,$arguments){
-        echo $this->twig->render($file, ["parameters"=>$arguments]); 
+        echo $this->twig->render($file, $arguments); 
+    }
+
+    public function Toredirect($url){
+        header("Location: /".$url);
     }
 }

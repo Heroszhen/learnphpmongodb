@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-class Home extends AbstractController{
+use Frameworkphp3wa\AbstractController;
+
+class HomeController extends AbstractController{
     public function index(){
         $this->render("home.index.twig",["nav"=>"home"]);
     }
