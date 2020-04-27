@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+{% block content %}
+<div id="home" class="container pt-3">
+    <div class="row">
+        <h1 class="col-12 text-center mb-5">Learning</h1>
+        <div class="col-12">
+			{% for one in comments %}
+			{{one.name}}
+			{% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

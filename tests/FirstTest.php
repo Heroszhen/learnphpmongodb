@@ -3,7 +3,8 @@ namespace Test;
 use PHPUnit\Framework\TestCase;
 
 class FirstTest extends TestCase{
-
+	//vendor\bin\phpunit
+	
     public function testEmpty(){
         $this->assertEquals(1,1);
     }
@@ -14,4 +15,3 @@ class FirstTest extends TestCase{
         $this->assertFileExists(dirname(__DIR__).'/app/hero.php');
     }
 }
-?>

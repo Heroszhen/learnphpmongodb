@@ -19,7 +19,7 @@ class Kernel{
         $router->getRouter($twig,$dispatcher);
     }
 
-    public function getPDO(){
-        return ConnectMysql::getPDO();
+    public function getDB(){
+        return ConnectMysql::getDB();
     }
 }

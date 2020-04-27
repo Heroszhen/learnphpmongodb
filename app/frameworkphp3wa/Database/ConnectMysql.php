@@ -1,29 +1,23 @@
 <?php
 namespace Frameworkphp3wa\Database;
 
-use PDO;
+use \MongoDB\Client;
 
 class ConnectMysql{
-    private static $pdo = null;
+    private static $db = null;
 
     private function __construct() {}
 
-    public static function getPDO(){
-        if (self::$pdo === null) {
+    public static function getDB(){
+        if (self::$db === null) {
             $config = include dirname(dirname(dirname(__DIR__))).'/app/config.php';
-            $pdo = new PDO(
-                'mysql:host='.$config["host"].';dbname='.$config["dbname"],
-                $config["username"],
-                $config["password"],
-                array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                )
-            );
+            //$client = new Client('mongodb+srv://'.$config['user'].':'.$config['mdp'].'@'.$config['host']);
+            //$db = $client->sample_mflix->comments;
+            $client = new Client('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false');
+            $db = $client->smallforum->user;
         }
 
-        return $pdo;
+        return $db;
     }
 }
  

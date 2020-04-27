@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Frameworkphp3wa\AbstractController;
 use Frameworkphp3wa\FlashBag;
+use App\Repository\HomeRepository;
 
 class HomeController extends AbstractController{
 
@@ -15,4 +16,15 @@ class HomeController extends AbstractController{
             "flash" => $flash->get()
         ]);
     }
+    
+    public function Learning(){
+		$hr = new HomeRepository();
+		$comments = $hr->Learning();/*
+		echo "<pre>";
+		var_dump($comments);
+		echo "</pre>";*/
+		return $this->render("home.learning.twig",[
+            "comments" => $comments
+        ]);
+	}
 }

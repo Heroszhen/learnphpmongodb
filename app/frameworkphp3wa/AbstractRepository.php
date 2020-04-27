@@ -4,10 +4,10 @@ namespace Frameworkphp3wa;
 use Frameworkphp3wa\Kernel;
 
 abstract class AbstractRepository{
-    protected $pdo;
+    protected $db;
 
     public function __construct() {
-        $this->pdo = (new Kernel)->getPDO();
+        $this->db = (new Kernel)->getDB();
     }
 
 }
