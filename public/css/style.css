@@ -26,3 +26,13 @@ a , a:hover{
     height:100%;
     width:auto;
 }*/
+
+main{
+	min-height:calc(100vh - 112px);
+}
+
+footer{
+	background-color:rgb(34,34,34);
+	padding-top:20px;
+	padding-bottom:10px;
+}

@@ -12,4 +12,5 @@ class SecurityController extends AbstractController{
     public function index(){
         return ["security.index.twig",[]];
     }
+    
 }

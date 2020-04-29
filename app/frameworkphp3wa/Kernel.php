@@ -13,13 +13,13 @@ class Kernel{
         $twig = new Twig\Environment($loader, [
             'cache' => false,
         ]);
-
+		$twig->addGlobal('session', $_SESSION);
         $router = new Router();
         $dispatcher = $router->setRoutes($twig);
         $router->getRouter($twig,$dispatcher);
     }
 
-    public function getDB(){
-        return ConnectMysql::getDB();
+    public function getDB($db){
+        return ConnectMysql::getDB($db);
     }
 }

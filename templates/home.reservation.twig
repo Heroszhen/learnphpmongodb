@@ -1,0 +1,72 @@
+{% extends "base.twig" %}
+{% block content %}
+<div id="homereservation">
+	<div class="container pt-5">
+		<div class="row justify-content-center">
+			<div class="col-12 text-center h2 mb-5">
+				Réservez une chambre
+			</div>
+			<div class="col-12 col-md-10 col-lg-8 text-center">
+				<form method="POST" action="/reservation">
+					{% if flash != null %}
+						<div class="alert alert-{{flash.type}}">
+							{{flash.message}}
+						</div>
+					{% endif %}
+					<div class="row form-group">
+						<div class="col-5 col-md-4 text-left">
+							Client
+						</div>
+						<div class="col-7 col-md-8">
+							<select class="form-control" name="client" value="{{post.client}}">
+								<option value=""></option>
+							{% for one in allcustomers %}
+								<option value="{{one._id}}" {% if one._id == post.client %}selected{% endif %}>{{ one.lastname }}</option>
+							{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-5 col-md-4 text-left">
+							Date d'arrivée
+						</div>
+						<div class="col-7 col-md-8">
+							<input type="date" class="form-control" id="start" name="start" value="{{post.start}}" min="2020-01-05" max="2020-06-31">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-5 col-md-4 text-left">
+							Date de départ
+						</div>
+						<div class="col-7 col-md-8">
+							<input type="date" class="form-control" id="end" name="end" value="{{post.end}}" min="2020-01-05" max="3021-06-31">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-5 col-md-4 text-left">
+							Nombre d'adultes
+						</div>
+						<div class="col-7 col-md-8">
+							<input type="number" class="form-control" id="quantity1" name="quantity1" min="1" value="{{post.quantity1}}">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-5 col-md-4 text-left">
+							Nombre d'enfants
+						</div>
+						<div class="col-7 col-md-8">
+							<input type="number" class="form-control" id="quantity2" name="quantity2" min="1" value="{{post.quantity2}}">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-5 col-md-4"></div>
+						<div class="col-7 col-md-8 text-left">
+							<button type="submit" class="btn btn-danger">Envoyer</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

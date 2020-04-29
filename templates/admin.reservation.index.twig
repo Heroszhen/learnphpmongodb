@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+{% block content %}
+<div id="adminreservationidex">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center h2 mt-5">
+				Toutes les réservations
+			</div>
+			<div class="col-12">
+				<table class="table">
+				  <thead class="thead-dark">
+					<tr>
+					  <th scope="col">Nom du client</th>
+					  <th scope="col">Date d'arrivée</th>
+					  <th scope="col">Date de départ</th>
+					  <th scope="col">Nb Adultes</th>
+					  <th scope="col">Nb Enfants</th>
+					  <th scope="col">Actions</th>
+					</tr>
+				  </thead>
+				  <tbody>
+				  {% for one in bookings %}
+					<tr>
+					  <td>{{one.customer_name}}</td>
+					  <td>{{one.checkinDate|date('d/m/Y')}}</td>
+					  <td>{{one.checkoutDate|date('d/m/Y')}}</td>
+					  <td>{{one.adults}}</td>
+					  <td>{{one.children}}</td>
+					  <td>
+						<a class="btn btn-danger btn-sm mb-1" href="/admin/reservation/supprimerreservation/{{one.redisid}}">Supprimer</a>
+						<br>
+						<a class="btn btn-info btn-sm" href="/admin/reservation/modifierreservation/{{one.redisid}}">Modifier</a>
+					  </td>
+					</tr>
+					{% endfor %}
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

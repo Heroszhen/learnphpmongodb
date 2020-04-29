@@ -12,14 +12,22 @@
     <title>{% block title %}Frameworkphp3wa{% endblock %}</title>
   </head>
   <body>
+	<div>
+		{% include 'nav.twig' %}
+	</div>
 
   <!--
     <div id="bigimg">
       <img>
     </div>
     -->
-    {% block content %}{% endblock %}
-
+    <main>
+		{% block content %}{% endblock %}
+    </main>
+	
+	<div>
+		{% include 'footer.twig' %}
+	</div>
     {% block javascripts %}
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

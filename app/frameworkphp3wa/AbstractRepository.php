@@ -6,8 +6,8 @@ use Frameworkphp3wa\Kernel;
 abstract class AbstractRepository{
     protected $db;
 
-    public function __construct() {
-        $this->db = (new Kernel)->getDB();
+    public function __construct($db) {
+        $this->db = (new Kernel)->getDB($db);
     }
 
 }
