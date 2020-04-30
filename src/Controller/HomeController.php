@@ -70,11 +70,12 @@ class HomeController extends AbstractController{
 
 		];
 		$allcustomers = $cr->get($options);
+		$flash = $flash->get();
 		
 		return $this->render("home.reservation.twig",[
             "allcustomers" => $allcustomers,
             "post" => $post,
-            "flash" => $flash->get()
+            "flash" => $flash
         ]);
 	}
 	
@@ -98,7 +99,7 @@ class HomeController extends AbstractController{
 	
 	public function logout(){
         unset($_SESSION["user"]);
-        session_destroy();
+        //session_destroy();
         header("Location: /");
     }
 	

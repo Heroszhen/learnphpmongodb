@@ -34,7 +34,7 @@ class FlashBag
     public function get()
     {
         $return = [];
-        if (is_array($_SESSION['flashbag'])) {
+        if (isset($_SESSION['flashbag']) && is_array($_SESSION['flashbag'])) {
             $return = $_SESSION['flashbag'];
             // Le principe des sessions flash étant qu'elles sont utilisées 
             // qu'une seule fois donc on supprime pendant le Get
