@@ -3,8 +3,17 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-9 col-lg-7 text-center">
-            
+        <div class="col-12 h1 text-center font-weight-bold mt-3 mb-5">
+            Connectez-vous
+        </div>
+        <div class="col-md-5">
+			<form method="POST" action="/login">
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" id="email" name="email" value="{{post.client}}">
+				 </div>
+				<button type="submit" class="btn btn-primary">Envoyer</button>
+			</form>
         </div>
     </div>
 </div>

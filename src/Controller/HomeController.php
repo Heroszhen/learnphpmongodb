@@ -40,7 +40,8 @@ class HomeController extends AbstractController{
 		$flash = new FlashBag();
 		$flash->empty();
 		if($post == null){
-			$post['client'] = "";
+			if(isset($_SESSION["user"]))$post['client'] = $_SESSION["user"]["_id"];
+			else $post['client'] = "";
 			$post['start'] = "";
 			$post['end'] = "";
 			$post['quantity1'] = 1;
@@ -80,10 +81,25 @@ class HomeController extends AbstractController{
 	/**
      * 
      */
-    public function login(){
+    public function login($post=null){
+		if($post == null)$post["email"] = "";
+		else{
+			$cr = new CustomerRepository();
+			$customer = $cr->findByEmail($post["email"]);
+			if($customer != null){
+				$_SESSION["user"] = $customer;
+				header("Location: /");
+			}
+		}
 		return $this->render("home.login.twig",[
-            
+            "post" => $post
         ]);
 	}
+	
+	public function logout(){
+        unset($_SESSION["user"]);
+        session_destroy();
+        header("Location: /");
+    }
 	
 }

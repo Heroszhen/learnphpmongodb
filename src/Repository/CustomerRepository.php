@@ -34,6 +34,9 @@ class CustomerRepository extends AbstractRepository{
 		
 	}
 	
+	/**
+	 * query : options
+	 */
 	public function get($query = null){
 		$collection = $this->db->customers;
 		if($query == null)$result = $collection->find([]);
@@ -43,6 +46,11 @@ class CustomerRepository extends AbstractRepository{
 	
 	public function get2($id,$options){
 		$result = $this->db->customers->findOne(["_id" => new \MongoDB\BSON\ObjectId((string)$id)],$options);	
+		return $result;
+	}
+	
+	public function findByEmail($email){
+		$result = $this->db->customers->findOne(["email" => $email]);	
 		return $result;
 	}
 }

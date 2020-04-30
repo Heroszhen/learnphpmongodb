@@ -18,4 +18,6 @@ return function(RouteCollector $r) {
     $r->addRoute('POST', '/admin/reservation/modifierreservation/{id:.+}',array(new AdminreservationController($_GET["twig"]), "editOneBooking",[$_SERVER['REQUEST_URI'],$_POST]));
     
     $r->addRoute('GET', '/login',array(new HomeController($_GET["twig"]), "login",[]));
+    $r->addRoute('POST', '/login',array(new HomeController($_GET["twig"]), "login",[$_POST]));
+    $r->addRoute('GET', '/logout',array(new HomeController($_GET["twig"]), "logout",[]));
 };
